@@ -1,0 +1,8 @@
+command:
+sudo hdparm -I /dev/sda
+
+
+/dev/sda:
+SG_IO: bad/missing sense data, sb[]:  70 00 05 00 00 00 00 18 00 00 00 00 20 00 00 c0 00 00 00 00 f8 21 00 00 00 00 00 00 00 00 00 00
+SG_IO: bad/missing sense data, sb[]:  70 00 05 00 00 00 00 18 00 00 00 00 20 00 00 c0 00 00 00 00 f8 21 00 00 00 00 00 00 00 00 00 00
+ HDIO_DRIVE_CMD(identify) failed: Input/output error
