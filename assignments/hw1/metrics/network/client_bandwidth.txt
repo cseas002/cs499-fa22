@@ -1,0 +1,105 @@
+command:
+ssh node1 perf -c node0 -e -i 1 -u -b 10m (then 10m, 20m, 100m, 1000m, 10000m)
+------------------------------------------------------------
+Client connecting to node0, UDP port 5001 with pid 10325
+Sending 1470 byte datagrams, IPG target: 1176.00 us (kalman adjust)
+UDP buffer size:  208 KByte (default)
+------------------------------------------------------------
+[  3] local 10.10.1.2 port 56568 connected with 10.10.1.1 port 5001
+[ ID] Interval       Transfer     Bandwidth      PPS
+[  3] 0.00-1.00 sec  1.19 MBytes  10.0 Mbits/sec  851 pps
+[  3] 1.00-2.00 sec  1.19 MBytes  10.0 Mbits/sec  850 pps
+[  3] 2.00-3.00 sec  1.19 MBytes  10.0 Mbits/sec  850 pps
+[  3] 3.00-4.00 sec  1.19 MBytes  10.0 Mbits/sec  850 pps
+[  3] 4.00-5.00 sec  1.19 MBytes  10.0 Mbits/sec  850 pps
+[  3] 5.00-6.00 sec  1.19 MBytes  10.0 Mbits/sec  850 pps
+[  3] 6.00-7.00 sec  1.19 MBytes  10.0 Mbits/sec  850 pps
+[  3] 7.00-8.00 sec  1.19 MBytes  10.0 Mbits/sec  850 pps
+[  3] 8.00-9.00 sec  1.19 MBytes  10.0 Mbits/sec  850 pps
+[  3] 9.00-10.00 sec  1.19 MBytes  10.0 Mbits/sec  850 pps
+[  3] 0.00-10.00 sec  11.9 MBytes  10.0 Mbits/sec  850 pps
+[  3] Sent 8505 datagrams
+[  3] Server Report:
+[  3]  0.0-10.0 sec  11.9 MBytes  10.0 Mbits/sec   0.000 ms    0/ 8505 (0%)
+------------------------------------------------------------
+Client connecting to node0, UDP port 5001 with pid 10393
+Sending 1470 byte datagrams, IPG target: 588.00 us (kalman adjust)
+UDP buffer size:  208 KByte (default)
+------------------------------------------------------------
+[  3] local 10.10.1.2 port 52607 connected with 10.10.1.1 port 5001
+[ ID] Interval       Transfer     Bandwidth      PPS
+[  3] 0.00-1.00 sec  2.39 MBytes  20.0 Mbits/sec 1702 pps
+[  3] 1.00-2.00 sec  2.38 MBytes  20.0 Mbits/sec 1701 pps
+[  3] 2.00-3.00 sec  2.38 MBytes  20.0 Mbits/sec 1701 pps
+[  3] 3.00-4.00 sec  2.38 MBytes  20.0 Mbits/sec 1701 pps
+[  3] 4.00-5.00 sec  2.38 MBytes  20.0 Mbits/sec 1701 pps
+[  3] 5.00-6.00 sec  2.38 MBytes  20.0 Mbits/sec 1701 pps
+[  3] 6.00-7.00 sec  2.38 MBytes  20.0 Mbits/sec 1701 pps
+[  3] 7.00-8.00 sec  2.38 MBytes  20.0 Mbits/sec 1701 pps
+[  3] 8.00-9.00 sec  2.38 MBytes  20.0 Mbits/sec 1701 pps
+[  3] 9.00-10.00 sec  2.38 MBytes  20.0 Mbits/sec 1701 pps
+[  3] 0.00-10.00 sec  23.8 MBytes  20.0 Mbits/sec 1700 pps
+[  3] Sent 17008 datagrams
+[  3] Server Report:
+[  3]  0.0-10.0 sec  23.8 MBytes  20.0 Mbits/sec   0.000 ms    0/17008 (0%)
+------------------------------------------------------------
+Client connecting to node0, UDP port 5001 with pid 10452
+Sending 1470 byte datagrams, IPG target: 117.60 us (kalman adjust)
+UDP buffer size:  208 KByte (default)
+------------------------------------------------------------
+[  3] local 10.10.1.2 port 52558 connected with 10.10.1.1 port 5001
+[ ID] Interval       Transfer     Bandwidth      PPS
+[  3] 0.00-1.00 sec  11.9 MBytes   100 Mbits/sec 8504 pps
+[  3] 1.00-2.00 sec  11.9 MBytes   100 Mbits/sec 8503 pps
+[  3] 2.00-3.00 sec  11.9 MBytes   100 Mbits/sec 8503 pps
+[  3] 3.00-4.00 sec  11.9 MBytes   100 Mbits/sec 8503 pps
+[  3] 4.00-5.00 sec  11.9 MBytes   100 Mbits/sec 8503 pps
+[  3] 5.00-6.00 sec  11.9 MBytes   100 Mbits/sec 8503 pps
+[  3] 6.00-7.00 sec  11.9 MBytes   100 Mbits/sec 8503 pps
+[  3] 7.00-8.00 sec  11.9 MBytes   100 Mbits/sec 8503 pps
+[  3] 8.00-9.00 sec  11.9 MBytes   100 Mbits/sec 8503 pps
+[  3] 9.00-10.00 sec  11.9 MBytes   100 Mbits/sec 8503 pps
+[  3] 0.00-10.00 sec   119 MBytes   100 Mbits/sec 8503 pps
+[  3] Sent 85035 datagrams
+[  3] Server Report:
+[  3]  0.0-10.0 sec   119 MBytes   100 Mbits/sec   0.000 ms    0/85035 (0%)
+------------------------------------------------------------
+Client connecting to node0, UDP port 5001 with pid 10510
+Sending 1470 byte datagrams, IPG target: 11.76 us (kalman adjust)
+UDP buffer size:  208 KByte (default)
+------------------------------------------------------------
+[  3] local 10.10.1.2 port 55442 connected with 10.10.1.1 port 5001
+[ ID] Interval       Transfer     Bandwidth      PPS
+[  3] 0.00-1.00 sec   119 MBytes  1.00 Gbits/sec 85035 pps
+[  3] 1.00-2.00 sec   119 MBytes  1000 Mbits/sec 85034 pps
+[  3] 2.00-3.00 sec   119 MBytes  1000 Mbits/sec 85034 pps
+[  3] 3.00-4.00 sec   119 MBytes  1000 Mbits/sec 85033 pps
+[  3] 4.00-5.00 sec   119 MBytes  1.00 Gbits/sec 85035 pps
+[  3] 5.00-6.00 sec   119 MBytes  1000 Mbits/sec 85034 pps
+[  3] 6.00-7.00 sec   119 MBytes  1000 Mbits/sec 85034 pps
+[  3] 7.00-8.00 sec   119 MBytes  1000 Mbits/sec 85030 pps
+[  3] 8.00-9.00 sec   119 MBytes  1000 Mbits/sec 85038 pps
+[  3] 0.00-10.00 sec  1.16 GBytes  1000 Mbits/sec 85033 pps
+[  3] Sent 850340 datagrams
+[  3] Server Report:
+[  3]  0.0-10.0 sec  1.16 GBytes  1.00 Gbits/sec   0.000 ms    0/850340 (0%)
+------------------------------------------------------------
+Client connecting to node0, UDP port 5001 with pid 10566
+Sending 1470 byte datagrams, IPG target: 1.18 us (kalman adjust)
+UDP buffer size:  208 KByte (default)
+------------------------------------------------------------
+[  3] local 10.10.1.2 port 33681 connected with 10.10.1.1 port 5001
+[ ID] Interval       Transfer     Bandwidth      PPS
+[  3] 0.00-1.00 sec   505 MBytes  4.24 Gbits/sec 360365 pps
+[  3] 1.00-2.00 sec   533 MBytes  4.47 Gbits/sec 380178 pps
+[  3] 2.00-3.00 sec   559 MBytes  4.69 Gbits/sec 398682 pps
+[  3] 3.00-4.00 sec   560 MBytes  4.70 Gbits/sec 399246 pps
+[  3] 4.00-5.00 sec   568 MBytes  4.76 Gbits/sec 404994 pps
+[  3] 5.00-6.00 sec   568 MBytes  4.76 Gbits/sec 405083 pps
+[  3] 6.00-7.00 sec   568 MBytes  4.76 Gbits/sec 405180 pps
+[  3] 7.00-8.00 sec   567 MBytes  4.76 Gbits/sec 404400 pps
+[  3] 8.00-9.00 sec   567 MBytes  4.76 Gbits/sec 404791 pps
+[  3] 0.00-10.00 sec  5.43 GBytes  4.67 Gbits/sec 396759 pps
+[  3] Sent 3967592 datagrams
+[  3] Server Report:
+[  3]  0.0-10.0 sec  5.42 GBytes  4.66 Gbits/sec   0.000 ms 5115/3967592 (0%)
