@@ -1,0 +1,16 @@
+command:
+mlc --latency_matrix
+
+Intel(R) Memory Latency Checker - v3.9a
+Command line parameters: --latency_matrix 
+
+Using buffer size of 200.000MiB
+*** Unable to modify prefetchers (try executing 'modprobe msr')
+*** So, enabling random access for latency measurements
+Measuring idle latencies (in ns)...
+		Numa node
+Numa node	     0	     1	
+       0	  94.3	 132.0	
+       1	 132.5	  93.4	
+
+=> Average = 113.1

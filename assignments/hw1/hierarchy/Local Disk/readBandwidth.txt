@@ -1,0 +1,22 @@
+command: 
+fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=fiotest --filename=testfio --bs=4k --iodepth=64 --size=1G --readwrite=read
+fiotest: (g=0): rw=read, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=libaio, iodepth=64
+fio-3.1
+Starting 1 process
+
+fiotest: (groupid=0, jobs=1): err= 0: pid=8511: Thu Sep 22 15:07:24 2022
+   read: IOPS=44.1k, BW=172MiB/s (181MB/s)(1024MiB/5943msec)
+   bw (  KiB/s): min=162541, max=185280, per=99.61%, avg=175746.18, stdev=8275.54, samples=11
+   iops        : min=40635, max=46320, avg=43936.45, stdev=2068.87, samples=11
+  cpu          : usr=8.95%, sys=36.79%, ctx=6200, majf=0, minf=172
+  IO depths    : 1=0.1%, 2=0.1%, 4=0.1%, 8=0.1%, 16=0.1%, 32=0.1%, >=64=100.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.1%, >=64=0.0%
+     issued rwt: total=262144,0,0, short=0,0,0, dropped=0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=64
+
+Run status group 0 (all jobs):
+   READ: bw=172MiB/s (181MB/s), 172MiB/s-172MiB/s (181MB/s-181MB/s), io=1024MiB (1074MB), run=5943-5943msec
+
+Disk stats (read/write):
+  sda: ios=256832/6, merge=2942/8, ticks=333440/104, in_queue=333504, util=98.36%
