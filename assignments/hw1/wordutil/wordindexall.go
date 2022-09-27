@@ -1,8 +1,6 @@
-// package main
 package wordutil
 
 import (
-	// "fmt"
 	"strings"
 )
 
@@ -14,26 +12,19 @@ import (
 // Matching is case insensitive, e.g. "Orange" and "orange" is considered the
 // same word.
 func WordIndexAll(s string) map[string][]int {
-	// TODO: implement me
-	s = strings.ToLower(s)
-	stringMap := make(map[string][]int)
-	stringList := strings.Fields(s)
-	for _, str := range stringList {
-		str = strings.ToLower(str) // make it to lowercase
-		index := strings.Index(s, str)
+	s = strings.ToLower(s)              // make the string s to lowercase
+	stringMap := make(map[string][]int) // initializing the map with string keys and int values
+	stringList := strings.Fields(s)     // seperating the input string to a list of strings
+	for _, str := range stringList {    // for every string in the list
+		str = strings.ToLower(str)        // make it to lowercase
+		index := strings.Index(s, str)    // find the index of the first substring str in the string s
 		listLength := len(stringMap[str]) // the list in stringMap[str] length
-		if listLength > 0 { // if there's already another element
-			previousIndex := stringMap[str][listLength - 1]
-			// fmt.Println(str, previousIndex, s[previousIndex:])
-			index = strings.Index(s[previousIndex + 1:], str) + 1 // search on the right of that string
-			index += previousIndex // the index is the previous index + 1 + the index on the right of that string
+		if listLength > 0 {               // if there's already another element
+			previousIndex := stringMap[str][listLength-1]       // get the index of the last element
+			index = strings.Index(s[previousIndex+1:], str) + 1 // search on the right of that string
+			index += previousIndex                              // the index is the previous index + 1 + the index on the right of that string
 		}
-		stringMap[str] = append(stringMap[str], index) // add to that key the index
+		stringMap[str] = append(stringMap[str], index) // add to the key = the substring, the index
 	}
-	// HINT: You may find the `strings.Index` and `strings.ToLower` functions helpful
 	return stringMap
 }
-
-// func main() {
-// 	fmt.Println(WordIndexAll("asdnas adhashd  ahdfuiahah sdhas art arq aa aa  art asd"))
-// }
