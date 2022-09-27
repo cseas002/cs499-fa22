@@ -1,8 +1,6 @@
 package wordutil
-// package main
 
 import (
-	// "fmt"
 	"strings"
 )
 
@@ -13,17 +11,13 @@ import (
 // Matching is case insensitive, e.g. "Orange" and "orange" is considered the
 // same word.
 func WordCount(s string) map[string]int {
-	// TODO: implement me
-	stringMap := make(map[string]int)
-	stringList := strings.Fields(s)
-	for _, str := range stringList {
-		str = strings.ToLower(str)              // make it to lowercase
-		stringMap[str]++ // add to that key the index
+	s = strings.ToLower(s) // make the string s to lowercase
+	stringMap := make(map[string]int) // initializing the map with string keys and int values
+	stringList := strings.Fields(s) // seperating the input string to a list of strings
+	for _, str := range stringList { // for every string in the list
+		str = strings.ToLower(str)   // make it to lowercase
+		stringMap[str]++ // add +1 to the map with the string as the key
 	}
-	// HINT: You may find the `strings.Index` and `strings.ToLower` functions helpful
 	return stringMap
 }
 
-// func main() {
-// 	fmt.Println(WordCount("sadas asdafa asda a a aa a dsa"))
-// }
