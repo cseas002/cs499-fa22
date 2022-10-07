@@ -1,0 +1,18 @@
+Running 5s test @ http://node0/
+  10 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   697.40us  137.55us   4.32ms   70.60%
+    Req/Sec     1.42k   108.23     1.70k    66.99%
+  72110 requests in 5.10s, 33.21MB read
+Requests/sec:  14140.50
+Transfer/sec:      6.51MB
+
+Running 5s test @ http://node0/
+  500 threads and 500 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   188.74ms  312.06ms   1.86s    81.78%
+    Req/Sec   206.98    117.02   555.00     65.89%
+  242890 requests in 5.10s, 111.87MB read
+  Socket errors: connect 0, read 0, write 0, timeout 16
+Requests/sec:  47580.94
+Transfer/sec:     21.91MB

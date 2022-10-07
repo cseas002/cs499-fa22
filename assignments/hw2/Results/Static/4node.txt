@@ -1,0 +1,27 @@
+Running 5s test @ http://node0/
+  10 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   702.24us  278.16us  10.80ms   96.04%
+    Req/Sec     1.43k   127.99     1.73k    72.94%
+  72633 requests in 5.10s, 33.45MB read
+Requests/sec:  14240.97
+Transfer/sec:      6.56MB
+
+Running 5s test @ http://node0/
+  100 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.74ms    2.27ms   9.59ms   79.88%
+    Req/Sec   420.32     75.89   696.00     66.69%
+  213026 requests in 5.10s, 98.12MB read
+Requests/sec:  41768.55
+Transfer/sec:     19.24MB
+
+Running 5s test @ http://node0/
+  500 threads and 500 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   183.43ms  310.13ms   1.86s    82.00%
+    Req/Sec   288.05    399.59     8.90k    95.06%
+  349993 requests in 5.11s, 151.50MB read
+  Non-2xx or 3xx responses: 75336
+Requests/sec:  68555.17
+Transfer/sec:     29.68MB

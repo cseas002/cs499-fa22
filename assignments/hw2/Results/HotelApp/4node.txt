@@ -1,0 +1,8 @@
+wrk -t100 -c100 -d5s -R99999999 -L -s ./scripts/hotel-reservation/mixed-workload_type_1.lua http://node0
+#[Mean    =     2489.699, StdDeviation   =     1432.470]
+#[Max     =     4993.024, Total count    =       207522]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  207622 requests in 4.94s, 347.68MB read
+Requests/sec:  42040.65
+Transfer/sec:     70.40MB
