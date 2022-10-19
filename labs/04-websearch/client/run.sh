@@ -5,7 +5,7 @@ export TERM=linux
 for node in {2..5} 
 do
 	rm node${node}_cpu.txt
-	# ssh node$node sudo apt-get -y install sysstat
+	ssh node$node sudo apt-get -y install sysstat
 done
 rm avg_results.txt
 rm ops_results.txt
@@ -18,7 +18,8 @@ echo "Running with $thread threads"
 for node in {2..5}
 do 
 	# ssh node$node export TERM=xterm-256color
-	ssh -t node$node top -o %CPU -n 1 | grep %CPU -A 1 | tail -1 | awk '{print $9}' >> node${node}_cpu.txt
+	# ssh -t node$node top -o %CPU -n 1 | grep %CPU -A 1 | tail -1 | awk '{print $9}' >> node${node}_cpu.txt 
+	ssh node$node mpstat | grep CPU -A 1 | tail -1 | awk '{print $4}' >> node${node}_cpu.txt 
 done
 # For every node from 2 to 5 it will measure the CPU throughput and append it in a file named "node<node number>_cpu.txt"
 cat temp.txt | grep ^"ops" > ops_temp.txt
