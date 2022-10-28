@@ -17,7 +17,6 @@ echo "Running with $thread threads"
 # This will run in the background in order to read the CPU utilization at the same time
 for node in {2..5}
 do 
-	# ssh node$node export TERM=xterm-256color
 	# ssh -t node$node top -o %CPU -n 1 | grep %CPU -A 1 | tail -1 | awk '{print $9}' >> node${node}_cpu.txt 
 	ssh node$node mpstat | grep CPU -A 1 | tail -1 | awk '{print $4}' >> node${node}_cpu.txt 
 done

@@ -1,0 +1,8 @@
+Running 5s test @ http://node0
+  100 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.45s     1.44s    4.99s    57.42%
+    Req/Sec       -nan      -nan   0.00      0.00%
+  179311 requests in 4.86s, 82.59MB read
+Requests/sec:  36918.41
+Transfer/sec:     17.00MB

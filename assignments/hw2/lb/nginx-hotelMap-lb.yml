@@ -2,7 +2,7 @@
 - name: Configure webserver with nginx
   hosts: webservers
   vars:
-    web_root: "{{ ansible_env.HOME }}/static-site"
+    web_root: "{{ ansible_env.HOME }}/hotelapp"
     worker_processes: 1
     worker_connections: 16
   tasks:
