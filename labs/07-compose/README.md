@@ -356,6 +356,7 @@ func (s *Profile) Run() error {
 	// Accept and serve incoming client requests 
 	log.Printf("Start Profile server. Addr: %s:%d\n", s.addr, s.port)
 	return srv.Serve(lis)
+}
 ```
 
 To build and start a server, we:
