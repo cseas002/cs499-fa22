@@ -2,4 +2,60 @@ syntax = "proto3";
 
 package geo;
 
-// TODO: Implement me
+service Geo {
+    rpc Nearby(Request) returns (Result);
+    rpc getNearbyPoints(Request) returns (Point);
+}
+
+message Request {
+    double Lat = 1;
+    double Lon = 2;
+}
+
+message Result {
+    repeated string HotelIds = 1;
+}
+
+message Point {
+    double Lat = 1;
+    double Lon = 2;
+    string Id = 3;
+}
+
+
+//message Geo {
+//   int port = 1;
+//    string addr = 2;
+//    *DatabaseSession dbsession = 3;
+//    opentracing.Tracer tracer = 4;
+//    *geoindex.ClusteringIndex geoidx = 5;
+//}
+
+
+
+message Hotel {
+  string id = 1;
+  string name = 2;
+  string phoneNumber = 3;
+  string description = 4;
+  Address address = 5;
+  repeated Image images = 6;
+}
+
+message Address {
+  string streetNumber = 1;
+  string streetName = 2;
+  string city = 3;
+  string state = 4;
+  string country = 5;
+  string postalCode = 6;
+  float lat = 7;
+  float lon = 8;
+}
+
+message Image {
+  string url = 1;
+  bool default = 2;
+}
+
+
