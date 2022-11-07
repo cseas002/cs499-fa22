@@ -25,8 +25,18 @@ message RatePlan {
 }
 
 message RoomType {
-  double TotalRate = 1;
+  double bookableRate = 1;
+  string code = 2;
+  string description = 3;
+  double totalRate = 4;
+  double totalRateInclusive = 5;
 }
+
+// bookableRate": 109.00,
+//             "code": "KNG",
+//             "description": "King sized bed",
+//             "totalRate": 109.00,
+//             "totalRateInclusive": 123.17
 
 //message Rate {
 //    int rate = 1;
