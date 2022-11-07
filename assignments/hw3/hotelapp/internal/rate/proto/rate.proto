@@ -20,6 +20,12 @@ message RateResult {
 message RatePlan {
   string InDate = 1;
   string OutDate = 2;
+  string HotelId = 3;
+  RoomType RoomType = 4;
+}
+
+message RoomType {
+  double TotalRate = 1;
 }
 
 //message Rate {

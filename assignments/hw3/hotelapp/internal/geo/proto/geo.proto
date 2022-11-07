@@ -4,7 +4,7 @@ package geo;
 
 service Geo {
     rpc Nearby(Request) returns (Result);
-    rpc getNearbyPoints(Request) returns (Point);
+    // rpc GetNearbyPoints(Request) returns (Point);
 }
 
 message Request {
