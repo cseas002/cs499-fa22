@@ -17,35 +17,23 @@ message RateResult {
   repeated RatePlan RatePlans = 1;
 }
 
+
 message RatePlan {
-  string InDate = 1;
-  string OutDate = 2;
-  string HotelId = 3;
-  RoomType RoomType = 4;
+  string HotelId = 1;
+  string Code = 2;
+  string InDate = 3;
+  string OutDate = 4;
+  RoomType RoomType = 5;
 }
+
 
 message RoomType {
   double bookableRate = 1;
   string code = 2;
-  string description = 3;
+  string roomDescription = 3;
   double totalRate = 4;
   double totalRateInclusive = 5;
 }
-
-// bookableRate": 109.00,
-//             "code": "KNG",
-//             "description": "King sized bed",
-//             "totalRate": 109.00,
-//             "totalRateInclusive": 123.17
-
-//message Rate {
-//    int rate = 1;
-//    string addr = 2;
-//    *DatabaseSession dbsession = 3;
-//    opentracing.Tracer tracer = 4;
-//}
-
-
 
 
 message Hotel {
