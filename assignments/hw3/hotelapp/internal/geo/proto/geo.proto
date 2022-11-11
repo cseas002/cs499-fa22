@@ -8,8 +8,8 @@ service Geo {
 }
 
 message Request {
-    double Lat = 1;
-    double Lon = 2;
+    float Lat = 1;
+    float Lon = 2;
 }
 
 message Result {

@@ -90,12 +90,10 @@ func (s *Frontend) searchHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	Lat, _ := strconv.ParseFloat(sLat, 64)
-	lat := float64(Lat)
-	Lon, _ := strconv.ParseFloat(sLon, 64)
-	lon := float64(Lon)
-
-	// changed to 64
+	Lat, _ := strconv.ParseFloat(sLat, 32)
+	lat := float32(Lat)
+	Lon, _ := strconv.ParseFloat(sLon, 32)
+	lon := float32(Lon)
 
 	log.Infof("searchHandler [lat: %v, lon: %v, inDate: %v, outDate: %v]", lat, lon, inDate, outDate)
 	// search for best hotels

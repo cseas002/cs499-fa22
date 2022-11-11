@@ -82,7 +82,7 @@ func (s *Geo) Run() error {
 // Nearby returns all hotels within a given distance.
 func (s *Geo) Nearby(ctx context.Context, req *pb.Request) (*pb.Result, error) {
 	var (
-		points = s.GetNearbyPoints(float64(req.Lat), float64(req.Lon)) //(nil, req)  
+		points = s.GetNearbyPoints(float64(req.Lat), float64(req.Lon))  
 		res    = &pb.Result{}
 	)
 	for _, p := range points {
@@ -92,13 +92,12 @@ func (s *Geo) Nearby(ctx context.Context, req *pb.Request) (*pb.Result, error) {
 	return res, nil
 }
 
-func (s *Geo) GetNearbyPoints(lat, lon float64) []geoindex.Point {  // added context, error, changed plat and plon
+func (s *Geo) GetNearbyPoints(lat, lon float64) []geoindex.Point {  
 	center := &geoindex.GeoPoint{
 		Pid:  "",
-		Plat: /*req.*/lat,
-		Plon: /*req.*/lon, 
+		Plat: lat,
+		Plon: lon, 
 	}
-	//var err error;
 
 	return s.geoidx.KNearest(
 		center,

@@ -101,34 +101,32 @@ func (s *Search) initRateClient() error {
 }
 
 
-
-
 // Nearby returns ids of nearby hotels ordered by ranking algo
 func (s *Search) Nearby(ctx context.Context, req *pb.NearbyRequest) (*pb.SearchResult, error) {
-		// find nearby hotels
-		nearby, err := s.geoClient.Nearby(nil, &geo.Request{
-			Lat: req.Lat,
-			Lon: req.Lon,
-		})
-		if err != nil {
-			log.Fatalf("nearby error: %v", err)
-		}
-	
-		// find rates for hotels
-		rates, err := s.rateClient.GetRates(nil, &rate.RateRequest{
-			HotelIds: nearby.HotelIds,
-			InDate:   req.InDate,
-			OutDate:  req.OutDate,
-		})
-		if err != nil {
-			log.Fatalf("rates error: %v", err)
-		}
-	
-		// build the response
-		res := new(pb.SearchResult)
-		for _, ratePlan := range rates.RatePlans {
-			res.HotelIds = append(res.HotelIds, ratePlan.HotelId)
-		}
-	
-		return res, nil
+	// find nearby hotels
+	nearby, err := s.geoClient.Nearby(nil, &geo.Request{
+		Lat: req.Lat,
+		Lon: req.Lon,
+	})
+	if err != nil {
+		log.Fatalf("nearby error: %v", err)
+	}
+
+	// find rates for hotels
+	rates, err := s.rateClient.GetRates(nil, &rate.RateRequest{
+		HotelIds: nearby.HotelIds,
+		InDate:   req.InDate,
+		OutDate:  req.OutDate,
+	})
+	if err != nil {
+		log.Fatalf("rates error: %v", err)
+	}
+
+	// build the response
+	res := new(pb.SearchResult)
+	for _, ratePlan := range rates.RatePlans {
+		res.HotelIds = append(res.HotelIds, ratePlan.HotelId)
+	}
+
+	return res, nil
 }
