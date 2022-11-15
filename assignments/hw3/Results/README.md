@@ -52,3 +52,31 @@ An expected result since the monolithic implementation is just a binary file whe
 implementation is bound by network speeds. It is worth mentioning that in, our case, where the containers
 are all inside the same machine, network is probably not an issue, but the overhead of gRPC parsing
 and other communivcation overheads that are causing the extra delays. 
+
+# ADD IMAGE AND EXPLAIN CHAIN CALLS
+
+## Multiple nodes
+```
+Running 30s test @ http://node0:8080
+  2 threads and 100 connections
+  Thread calibration: mean lat.: 5.681ms, rate sampling interval: 23ms
+  Thread calibration: mean lat.: 2.788ms, rate sampling interval: 11ms
+  Thread Stats   Avg      Stdev     99%   +/- Stdev
+    Latency     4.35ms    4.10ms  14.98ms   78.54%
+    Req/Sec     1.04k   534.95     2.27k    74.83%
+#[Mean    =        1.774, StdDeviation   =        1.482]
+#[Max     =       33.984, Total count    =        39897]
+#[Buckets =           27, SubBuckets     =         2048]
+----------------------------------------------------------
+  59893 requests in 30.00s, 13.54MB read
+  Non-2xx or 3xx responses: 24038
+Requests/sec:   1996.52
+Transfer/sec:    462.29KB
+
+Search Nearby needed ~2ms and GetProfiles ~300us
+```
+What we can see here is a dramatic increase of latency. Again, an expected result since now the communication
+is happening over the actual network. It is of course the local network and not the internet, however we do 
+still observe the drop in performance when more communication is introduced
+
+# ADD IMAGE AND EXPLAIN CHAIN CALLS
