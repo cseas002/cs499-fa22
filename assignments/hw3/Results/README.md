@@ -53,8 +53,9 @@ implementation is bound by network speeds. It is worth mentioning that in, our c
 are all inside the same machine, network is probably not an issue, but the overhead of gRPC parsing
 and other communivcation overheads that are causing the extra delays. 
 
-# ADD IMAGE AND EXPLAIN CHAIN CALLS
+### Single node RPC call chains 
 <img src="https://github.com/cseas002/cs499-fa22/blob/main/assignments/hw3/Results/Single%20Node/singlenode_chain.png" alt="Single node RPC call chains" title="Single node RPC call chains">
+Here we can see the call chains for the single node microservices implementation of an indicative reuest. It is apparent that the bottleneck here is the Nearby function, taking 1.91ms out of the total 2.49ms it took to fulfill that request.
 
 ## Multiple nodes
 ```
@@ -80,5 +81,8 @@ What we can see here is a dramatic increase of latency. Again, an expected resul
 is happening over the actual network. It is of course the local network and not the internet, however we do 
 still observe the drop in performance when more communication is introduced
 
-# ADD IMAGE AND EXPLAIN CHAIN CALLS
+### Multi node RPC call chains 
 <img src="https://github.com/cseas002/cs499-fa22/blob/main/assignments/hw3/Results/MultiNode/swarm_chain.png" alt="Multi node RPC call chains" title="Multi node RPC call chains">
+Here we can see the call chains for the multi node microservices implementation of an indicative reuest. Although this looks identical to the single node implemntation, the scale is different. Now the bottleneck is again the Nearby function, however it now took 8.55ms out of the total 16.32ms. Once again, an expected outcome.
+
+#### Thank you for reading :)
