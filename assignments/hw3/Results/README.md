@@ -54,6 +54,7 @@ are all inside the same machine, network is probably not an issue, but the overh
 and other communivcation overheads that are causing the extra delays. 
 
 # ADD IMAGE AND EXPLAIN CHAIN CALLS
+<img src="https://github.com/cseas002/cs499-fa22/blob/main/assignments/hw3/Results/Single%20Node/singlenode_chain.png" alt="Single node RPC call chains" title="Single node RPC call chains">
 
 ## Multiple nodes
 ```
@@ -80,3 +81,4 @@ is happening over the actual network. It is of course the local network and not 
 still observe the drop in performance when more communication is introduced
 
 # ADD IMAGE AND EXPLAIN CHAIN CALLS
+<img src="https://github.com/cseas002/cs499-fa22/blob/main/assignments/hw3/Results/MultiNode/swarm_chain.png" alt="Multi node RPC call chains" title="Multi node RPC call chains">
