@@ -68,6 +68,17 @@ services:
     restart: always
     volumes:
       - rate:/data/db
+  
+  memcached-profile:
+    image: memcached
+    container_name: 'hotel_app_rate_memc'
+    restart: always
+    environment:
+      - MEMCACHED_CACHE_SIZE=128
+      - MEMCACHED_THREADS=2
+    logging:
+      options:
+        max-size: 50m
 
 volumes:
   rate:
