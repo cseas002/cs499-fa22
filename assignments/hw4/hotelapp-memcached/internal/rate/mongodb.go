@@ -72,7 +72,7 @@ func (db *DatabaseSession) GetRates(hotelIds []string) (RatePlans, error) {
 			}
 		} else if err == memcache.ErrCacheMiss {
 				// memcached miss, set up mongo connection
-				log.Infof("Memcached miss: hotel_id == %v\n", id)
+				log.Infof("Memcached miss: hotel_id == %v\n", hotelID)
 				session := db.MongoSession.Copy()
 				defer session.Close()
 				c := session.DB("rate-db").C("inventory")

@@ -15,7 +15,7 @@ var (
 )
 
 func initializeRateDatabase() *rate.DatabaseSession {
-	dbsession := profile.NewDatabaseSession(*database_addr, *memcache_addr)
+	dbsession := rate.NewDatabaseSession(*database_addr, *memcache_addr)
 	dbsession.LoadDataFromJsonFile(filepath.Join(*jsonDataDir, "inventory.json"))
 	return dbsession
 }

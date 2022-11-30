@@ -69,7 +69,7 @@ services:
     volumes:
       - rate:/data/db
   
-  memcached-profile:
+  memcached-rate:
     image: memcached
     container_name: 'hotel_app_rate_memc'
     restart: always
