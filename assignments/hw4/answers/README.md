@@ -37,4 +37,8 @@ Tutorial for [using swarm with docker-compose (deploy stack)](https://docs.docke
 ### Results analysis
 
 #### Latency
-![alt text](https://github.com/cseas002/cs499-fa22/blob/main/assignments/hw4/answers/results/latency.png "MLatenct")
+![alt text](https://github.com/cseas002/cs499-fa22/blob/main/assignments/hw4/answers/results/latency.png "Latency")
+
+#### Throughput
+![alt text](https://github.com/cseas002/cs499-fa22/blob/main/assignments/hw4/answers/results/throughput.png "Throughput")
+
