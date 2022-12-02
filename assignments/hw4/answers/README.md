@@ -6,9 +6,9 @@
 
 Configuration:
 ```
-node0		Workload generator
-node1		Target server (case of single machine), Docker Swarm leader (case of multiple machines)
-node2-4	Docker Swarm workers
+node0     Workload generator
+node1     Target server (case of single machine), Docker Swarm leader (case of multiple machines)
+node2-4   Docker Swarm workers
 ```
 
 To generate workloads we used
