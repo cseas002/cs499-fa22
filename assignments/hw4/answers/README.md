@@ -12,8 +12,9 @@ To generate workloads we used
 ./wrk -t2 -c100 -d30s -R2000 -L -s ./scripts/hotel-reservation/mixed-workload_type_1.lua http://{node}:{port for mongodb-rate given by stack services}
 ```
 
-We noticed that ../wrk2/scripts/hotel-reservation/mixed-workload_type_1.lua directory has the following code at the end:
+We noticed that ``` ../wrk2/scripts/hotel-reservation/mixed-workload_type_1.lua ``` directory has the following code at the end:
 
+```
 request = function()
   cur_time = math.floor(socket.gettime())
   local search_ratio      = 0.6
@@ -31,9 +32,9 @@ request = function()
   else 
     return reserve(url)
   end
-
+```
 So we changed it in order to have only 200 result codes (HTTP OK):
-
+```
 request = function()
 --   cur_time = math.floor(socket.gettime())
 --   local search_ratio      = 0.6
@@ -53,11 +54,12 @@ request = function()
 --   end
     return search_hotel(url)
 end
-
+```
 We commented out all the function code and we always return search_hotel(url), because we don't have the other services.
 
-We then ran ./wrk -t2 -c100 -d30s -R2000 -L -s ./scripts/hotel-reservation/mixed-workload_type_1.lua http://127.0.0.1:8080 in node0 (Manager):
+We then ran ``` ./wrk -t2 -c100 -d30s -R2000 -L -s ./scripts/hotel-reservation/mixed-workload_type_1.lua http://127.0.0.1:8080 ``` in node0 (Manager):
 
+```
 Running 30s test @ http://127.0.0.1:8080
   2 threads and 100 connections
   Thread calibration: mean lat.: 3.956ms, rate sampling interval: 10ms
@@ -72,8 +74,9 @@ Running 30s test @ http://127.0.0.1:8080
   59889 requests in 30.00s, 15.87MB read
 Requests/sec:   1996.43
 Transfer/sec:    541.61KB
-
+```
 The second time we ran it, we got completely different results (except req/sec and transfer/sec):
+```
 Running 30s test @ http://127.0.0.1:8080
   2 threads and 100 connections
   Thread calibration: mean lat.: 10.918ms, rate sampling interval: 32ms
@@ -88,9 +91,11 @@ Running 30s test @ http://127.0.0.1:8080
   57912 requests in 30.01s, 15.35MB read
 Requests/sec:   1930.02
 Transfer/sec:    523.69KB
-
+```
 So we decided to run it 25 times and get the average:
+```
 for i in {1..25}; do ./wrk -t2 -c100 -d30s -R2000 -L -s ./scripts/hotel-reservation/mixed-workload_type_1.lua http://127.0.0.1:8080 | grep Latency >> lat_results.txt; done
+```
 
 We did these processes both for scaled profile service and not. We scaled our profile microservice by 3
 
