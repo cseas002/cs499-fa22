@@ -99,7 +99,7 @@ for i in {1..25}; do ./wrk -t2 -c100 -d30s -R2000 -L -s ./scripts/hotel-reservat
 
 We did these processes both for scaled profile service and not. We scaled our profile microservice by 3
 
-
+![alt text](https://github.com/cseas002/cs499-fa22/blob/main/assignments/hw4/answers/results/scaled.png "Scaled vs Not Scaled")
 
 For scaled, the Search/Nearby gRPC was the bottleneck with average time ~59ms and GetProfiles had an average time ~57ms. 
 For not scaled, the Search/Nearby gRPC was the bottleneck with average time ~148ms and GetProfiles had an average time ~145ms. 
